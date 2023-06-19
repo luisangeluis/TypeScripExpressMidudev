@@ -6,9 +6,10 @@ router.route("/")
   .get((_req, res) => {
     res.send("Fetching all data");
   })
+  .post((_req, res) => {
+    res.send("Saving a diary")
+  });
 
-router.post("/", (_req, res) => {
-  res.send("Saving a diary")
-});
+
 
 export default router;
