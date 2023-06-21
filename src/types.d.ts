@@ -5,5 +5,8 @@ export interface DiaryEntry {
   id: string,
   date: string,
   weather: Weather,
-  visibility:Visibility
+  visibility: Visibility
 }
+
+// export type DiaryEntryWithoutDate = Pick<DiaryEntry, "id" | "weather" | "visibility">
+export type DiaryEntryWithoutDate = Omit<DiaryEntry, "date">
