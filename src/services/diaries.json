@@ -1,21 +1,21 @@
 [
   {
-    "id":"1",
+    "id":1,
     "date":"2017-01-01",
-    "weather":"rainy",
+    "weather":"rainny",
     "visibility": "good"
   },
   {
-    "id":"2",
+    "id":2,
     "date":"2017-01-02",
     "weather":"sunny",
     "visibility": "good"
 
   },
   {
-    "id":"3",
+    "id":3,
     "date":"2017-01-03",
-    "weather":"rainy",
+    "weather":"rainny",
     "visibility": "ok"
 
   }
