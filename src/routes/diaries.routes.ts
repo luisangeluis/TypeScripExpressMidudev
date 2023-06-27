@@ -1,19 +1,19 @@
-import express from 'express'
-import * as diaryServices from '../services/diaries.services'
+import express from "express";
+import * as diaryServices from "../services/diaries.services";
 
-const router = express.Router()
+const router = express.Router();
 
-router.route('/')
+router
+  .route("/")
   .get((_req, res) => res.send(diaryServices.getEntriesWithoutDate()))
-  .post((_req, res) => res.send('Saving a diary'))
+  .post((_req, res) => res.send("Saving a diary"));
 
-router.route('/:id')
-  .get((req, res) => {
-    const id = req.params.id
+router.route("/:id").get((req, res) => {
+  const id = req.params.id;
 
-    const diary = diaryServices.findById(Number(id))
+  const diary = diaryServices.findById(Number(id));
 
-    return (diary != null) ? res.send(diary) : res.sendStatus(404)
-  })
+  return diary != null ? res.send(diary) : res.sendStatus(404);
+});
 
-export default router
+export default router;
