@@ -10,3 +10,4 @@ export interface DiaryEntry {
 
 // export type DiaryEntryWithoutDate = Pick<DiaryEntry, "id" | "weather" | "visibility">
 export type DiaryEntryWithoutDate = Omit<DiaryEntry, "date">;
+export type NewDiaryEntry = Omit<DiaryEntry, "id">;

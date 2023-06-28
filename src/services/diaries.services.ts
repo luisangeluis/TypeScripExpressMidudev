@@ -1,4 +1,8 @@
-import type { DiaryEntry, DiaryEntryWithoutDate } from "../types";
+import type {
+  DiaryEntry,
+  DiaryEntryWithoutDate,
+  NewDiaryEntry
+} from "../types";
 import diariesData from "./diaries.json";
 
 const diaries: DiaryEntry[] = diariesData as DiaryEntry[];
@@ -28,4 +32,17 @@ export const getEntriesWithoutDate = (): DiaryEntryWithoutDate[] => {
   return result;
 };
 
-export const addEntry = () => null;
+export const addEntry = (data: NewDiaryEntry): DiaryEntryWithoutDate => {
+  const newDiary: DiaryEntry = {
+    id: diariesData.length + 1,
+    date: data.date,
+    weather: data.weather,
+    visibility: data.visibility
+  };
+
+  diariesData.push(newDiary);
+
+  const { date, ...restOfEntry } = newDiary;
+
+  return restOfEntry;
+};

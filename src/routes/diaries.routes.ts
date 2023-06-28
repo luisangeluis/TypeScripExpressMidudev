@@ -6,7 +6,10 @@ const router = express.Router();
 router
   .route("/")
   .get((_req, res) => res.send(diaryServices.getEntriesWithoutDate()))
-  .post((_req, res) => res.send("Saving a diary"));
+  .post((req, res) => {
+    const data = req.body;
+    return res.send(diaryServices.addEntry(data));
+  });
 
 router.route("/:id").get((req, res) => {
   const id = req.params.id;
